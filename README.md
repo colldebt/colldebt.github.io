@@ -1,2 +1,0 @@
-# colldebt.github.io
-Colldebt
