@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/9222d49c94.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/adaptability.css">
+	<link rel="stylesheet" href="css/modal.css">
+
+	<link rel="shortcut icon" href="img/logo.ico" type="image/ico">
+	<link rel="icon" type="image/ico" href="img/logo.ico"> 
+
+	<title>Частное агенство - COLLDEBT</title>
+</head>
+
+<body>
+
+	<div class="modal_form">
+		<form action="#" id="_modal_form">
+			<h4>Оставить заявку</h4>
+			<div class="small">* все поля обязательны для заполнения</div>
+			<input class="_req" placeholder="Имя" maxlength="64" type="text">
+			<input class="_req _email" placeholder="E-mail" maxlength="64" type="email">
+			<select class="_req _select" name="service"> 
+				<option value="0" selected>Выберите услугу</option> 
+				<option value="1" >Постоянные звонки обидчику/должнику</option> 
+				<option value="2" >Возврат долгов за границей</option> 
+				<option value="3" >Подлог записок и *подарков* под дверь</option> 
+				<option value="4" >Возврат долгов в сфере IT</option> 
+				<option value="5" >Спам в соц. сетях</option> 
+				<option value="6" >Особая услуга</option> 
+			</select>
+			<textarea class="_req" maxlength="1024" placeholder="Опишите вашу проблему..." name="" cols="30" rows="10"></textarea>
+
+			<button class="form_button" onclick="event.preventDefault(); send_mail(this.parentNode);" type="button">ОТПРАВИТЬ</button>
+		</form>
+		<p onclick="close_form()">ЗАКРЫТЬ</p>
+	</div>
+
+
+	<header>
+		<div class="logo">
+			<img src="img/logo.png">
+			<h1><span class="start_logo">COLL</span><span class="end_logo">DEBT</span></h1>
+		</div>
+		<menu>
+			<a href="#about_us_link" class="_link-page" >О НАС</a>
+			<a href="#services_link" class="_link-page" >УСЛУГИ</a>
+			<a href="#performance_indicators_link" class="_link-page" >НАШИ ДОСТИЖЕНИЯ</a>
+			<a href="#" onclick="event.preventDefault(); show_form(0);" >ОСТАВИТЬ ЗАЯВКУ</a>
+		</menu>
+		<i class="fas fa-bars menu_button"></i>
+	</header>
+
+	<main>
+		
+		<div class="about_us" id="about_us_link" >
+			
+			<div class="about_us_content">
+				<h3>О нас</h3>
+				<p>	Мы частное агентство с командой профессионалов,
+					которое занимается возвращением долгов, отмщением
+					обидчикам, разборкой с Вашими деловыми партнерами.
+					Конкретный перечень услуг можно узнать по
+					электронной почте или по телефону.
+				</p>
+				<p>
+					Работаем на рынке работы по должникам с 2014 года,
+					клиенты остаются анонимными, а долги их должников
+					возвращаются нами всевозможными методами.
+				</p>
+				<p>
+					Если у Вас особый случай можем использовать сильное
+					психологическое воздействие на должника, но и
+					рассмотрим индивидуальные случаи с “особым”
+					заказом!
+				</p>	
+			</div>
+
+			<form class="about_us_form" action="#">
+				<h4>Оставить заявку</h4>
+				<div class="small">* все поля обязательны для заполнения</div>
+				<input class="_req" placeholder="Имя" maxlength="64" type="text">
+				<input class="_req _email" placeholder="E-mail" maxlength="64" type="email">
+				<select class="_req _select" name="service"> 
+					<option value="0" selected >Выберите услугу</option> 
+					<option value="1" >Постоянные звонки обидчику/должнику</option> 
+					<option value="2" >Возврат долгов за границей</option> 
+					<option value="3" >Подлог записок и *подарков* под дверь</option> 
+					<option value="4" >Возврат долгов в сфере IT</option> 
+					<option value="5" >Спам в соц. сетях</option> 
+					<option value="6" >Особая услуга</option> 
+				</select>
+				<textarea class="_req" maxlength="1024" placeholder="Опишите вашу проблему..." cols="30" rows="10"></textarea>
+
+				<button class="form_button" onclick="event.preventDefault(); send_mail(this.parentNode);" type="button">ОТПРАВИТЬ</button>
+			</form>
+
+		</div>
+
+		<div class="services" id="services_link" >
+			
+			<h3 class="block_header" >УСЛУГИ</h3>
+
+			<div class="services_lists">
+
+				<div class="service _anim_on_scroll">
+					<p class="service_name">Постоянные звонки обидчику/ должнику</p>
+					<i class="fas fa-phone service_icon"></i>
+					<input class="service_button" type="submit" value="ПОДРОБНЕЕ" onclick="event.preventDefault(); show_form(1);">
+				</div>
+				<div class="service _anim_on_scroll">
+					<p class="service_name">Возврат долгов за границей</p>
+					<i class="fas fa-globe-europe service_icon"></i>
+					<input class="service_button" type="submit" value="ПОДРОБНЕЕ" onclick="event.preventDefault(); show_form(2);">
+				</div>
+				<div class="service _anim_on_scroll">
+					<p class="service_name">Подлог *подарков* под дверь</p>
+					<i class="fas fa-gift service_icon"></i>
+					<input class="service_button"type="submit" value="ПОДРОБНЕЕ" onclick="event.preventDefault(); show_form(3);">
+				</div>
+				<div class="service _anim_on_scroll">
+					<p class="service_name">Возврат долгов в сфере IT</p>
+					<i class="fas fa-globe service_icon"></i>
+					<input class="service_button" type="submit" value="ПОДРОБНЕЕ" onclick="event.preventDefault(); show_form(4);">
+				</div>
+				<div class="service _anim_on_scroll">
+					<p class="service_name">Спам в соц. сетях</p>
+					<i class="fas fa-comments service_icon"></i>
+					<input class="service_button" type="submit" value="ПОДРОБНЕЕ" onclick="event.preventDefault(); show_form(5);">
+				</div>
+				<div class="service _anim_on_scroll">
+					<p class="service_name">Особая услуга</p>
+					<i class="fas fa-question-circle service_icon"></i>
+					<input class="service_button" type="submit" value="ПОДРОБНЕЕ" onclick="event.preventDefault(); show_form(6);">
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="performance_indicators _anim_on_scroll" id="performance_indicators_link">
+			<h3 class="block_header" >ПОКАЗАТЕЛИ НАШЕЙ РАБОТЫ</h3>
+
+			<div class="indicator_list">
+				<div class="indicator">
+					<p class="indicator_value"><span class="_anim_number" id="470">0</span>+</p>
+					<p class="indicator_text">Довольных клиентов</p>
+				</div>
+				<div class="indicator">
+					<p class="indicator_value"><span class="_anim_number" id="90">0</span>%</p>
+					<p class="indicator_text">Выиграных дел</p>
+				</div>
+				<div class="indicator">
+					<p class="indicator_value"><span class="_anim_number" id="15">0</span></p>
+					<p class="indicator_text">Лучших сотрудников</p>
+				</div>
+				<div class="indicator">
+					<p class="indicator_value"><span class="_anim_number" id="11.9">0</span>М</p>
+					<p class="indicator_text">Вернули клиентам</p>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="why_are_we">
+			<h3 class="block_header" >ПОЧЕМУ МЫ?</h3>
+
+			<div class="why_are_we_list">
+				<div class="why_are_we_block _anim_on_scroll">
+					<p>Опыт работы 6 лет</p>
+				</div>
+				<div class="why_are_we_block _anim_on_scroll">
+					<p>Персональный подход к проблемам клиента</p>
+				</div>				
+				<div class="why_are_we_block _anim_on_scroll">
+					<p>Нестандартные решения сложных вопросов</p>
+				</div>
+				<div class="why_are_we_block _anim_on_scroll">
+					<p>Урегулирование конфликта без клиента</p>
+				</div>
+				<div class="why_are_we_block _anim_on_scroll">
+					<p>Предоставление отчетов на каждом этапе</p>
+				</div>				
+				<div class="why_are_we_block _anim_on_scroll">
+					<p>Скидка постоянным клиентам</p>
+				</div>
+			</div>
+		</div>
+
+
+	</main>
+
+	<footer>
+		<div class="logo">
+			<img src="img/logo.png">
+			<h1><span class="start_logo">COLL</span><span class="end_logo">DEBT</span></h1>
+		</div>
+		<i class="fas fa-chevron-up up _link-page" href="#about_us_link"></i>
+	</footer>
+	<div class="message_wrapper">
+		<div class="message">
+				<p>Заявка принята!</p>
+		</div>
+	</div>
+
+	<!-- ====================================================================== -->
+
+	<!-- CDN JQuery 3.5.1 -->
+	<script 
+		src="https://code.jquery.com/jquery-3.5.1.min.js" 
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+		crossorigin="anonymous">
+	</script>
+
+	<!-- Анимации на странице -->
+	<script type="text/javascript" src="js/animations.js"></script>
+
+	<!-- Скрипты для отправки писем -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+	<script type="text/javascript" src="js/send_mail.js"></script>
+
+	<!-- Скрипт описывающий работу якорного меню -->
+	<script type="text/javascript" src="js/menu.js"></script>
+
+	<!-- ====================================================================== -->
+
+	   	
+</body>
+</html>

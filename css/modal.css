@@ -1,0 +1,65 @@
+.modal_form {
+	position: fixed;
+	z-index: 1000;
+
+	width: 100vw;
+	height: 100vh;
+
+	background: rgba(0,0,0, 0.5);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	transition: 0.5s;
+	transform: translateY(-100vh);
+	opacity: 0;
+}
+
+.modal_form > p { color: #fff; cursor: pointer; }
+
+.modal_form > form { opacity: 1; max-width: 325px; text-align: center;}
+
+._active_form { transform: translateY(0); opacity: 1; } 
+
+@media (max-width: 400px) 
+{
+	.modal_form > form { width: 100vw; }
+}
+
+.message_wrapper {
+	width: 100vw;
+	height: 100px;
+
+	position: fixed;
+	bottom: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transition: 0.5s;
+	transform: translateY(100px);
+	opacity: 0;
+}
+
+.message {
+	width: 325px;
+	height: 50px;
+	border-radius: 5px;
+	background-color: #35e33c;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 14px 28px #000, 0 10px 10px rgba(0,0,0,0.22);
+	cursor: pointer;
+}
+
+.message_error {
+	background-color: #de1a1a;
+}
+
+.message > p { color: #fff; margin: 0; font-size: 16px; }
+
+._active_message { transform: translateY(0); opacity: 1; }
